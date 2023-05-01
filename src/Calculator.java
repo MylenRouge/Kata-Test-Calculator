@@ -37,7 +37,7 @@ public class Calculator {
             result = calculated(number1, number2, operation);
             System.out.println("Ответ в римских цифрах: ");
             int roman = result;
-            String resultRoman = Roman.name(roman); //Чекпоинт на конвертацию в римские цифры
+            String resultRoman = convertNumToRoman(result); //Чекпоинт на конвертацию в римские цифры
             System.out.println(stable00 + " " + operation + " " + stable02 + " = " + resultRoman);
         }
         number1 = Integer.parseInt(stable00);
@@ -47,10 +47,10 @@ public class Calculator {
         System.out.println(number1 + " " + operation + " " + number2 + " = " + result);
     }
 
-//        private static String convertNumToRoman (int numArabian) {
-//        String[] roman = {"O", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"};
-//        final String s = roman[numArabian];
-//        return s;
+        private static String convertNumToRoman (int numArabian) {
+        String[] roman = {"O", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"};
+        final String s = roman[numArabian];
+        return s;
     }
 //    private static int romanToNumber(String roman) {
 //        try {
