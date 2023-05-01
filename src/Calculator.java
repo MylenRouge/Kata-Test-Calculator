@@ -29,14 +29,13 @@ public class Calculator {
         String stable00 = cleanNumbers[0];
         String stable01 = cleanNumbers[1];
         String stable02 = stable01.trim();
-        number1 = Roman.valueOf(stable00).toInt(); //ENUM CONVERTION
-        number2 = Roman.valueOf(stable02).toInt();
+        number1 = romanToNumber(stable00); //ENUM CONVERTION(NO)
+        number2 = romanToNumber(stable02);
         if (number1 < 0 && number2 < 0) {
             result = 0;
         } else {
             result = calculated(number1, number2, operation);
             System.out.println("Ответ в римских цифрах: ");
-            int roman = result;
             String resultRoman = convertNumToRoman(result); //Чекпоинт на конвертацию в римские цифры
             System.out.println(stable00 + " " + operation + " " + stable02 + " = " + resultRoman);
         }
@@ -52,45 +51,45 @@ public class Calculator {
         final String s = roman[numArabian];
         return s;
     }
-//    private static int romanToNumber(String roman) {
-//        try {
-//            switch (roman) {
-//                case "I" -> {
-//                    return 1;
-//                }
-//                case "II" -> {
-//                    return 2;
-//                }
-//                case "III" -> {
-//                    return 3;
-//                }
-//                case "IV" -> {
-//                    return 4;
-//                }
-//                case "V" -> {
-//                    return 5;
-//                }
-//                case "VI" -> {
-//                    return 6;
-//                }
-//                case "VII" -> {
-//                    return 7;
-//                }
-//                case "VIII" -> {
-//                    return 8;
-//                }
-//                case "IX" -> {
-//                    return 9;
-//                }
-//                case "X" -> {
-//                    return 10;
-//                }
-//            }
-//        } catch (InputMismatchException e) {
-//            throw new InputMismatchException("Неверный формат данных");
-//        }
-//        return -1;
-//    }
+    private static int romanToNumber(String roman) {
+        try {
+            switch (roman) {
+                case "I" -> {
+                    return 1;
+                }
+                case "II" -> {
+                    return 2;
+                }
+                case "III" -> {
+                    return 3;
+                }
+                case "IV" -> {
+                    return 4;
+                }
+                case "V" -> {
+                    return 5;
+                }
+                case "VI" -> {
+                    return 6;
+                }
+                case "VII" -> {
+                    return 7;
+                }
+                case "VIII" -> {
+                    return 8;
+                }
+                case "IX" -> {
+                    return 9;
+                }
+                case "X" -> {
+                    return 10;
+                }
+            }
+        } catch (InputMismatchException e) {
+            throw new InputMismatchException("Неверный формат данных");
+        }
+        return -1;
+    }
 
     public static int calculated(int num1, int num2, char op) {
         int result = 0;
